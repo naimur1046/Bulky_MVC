@@ -47,15 +47,15 @@ namespace BulkyWeb.Controllers
             }
 
             Category categoryFromDb = _db.Categories.Find(Id);
-            Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == Id);
-            Category? categoryFromDb2 = _db.Categories.Where(u=>u.Id==Id).FirstOrDefault();
+            //Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == Id);
+            //Category? categoryFromDb2 = _db.Categories.Where(u=>u.Id==Id).FirstOrDefault();
 
             if (categoryFromDb==null)
             {
                 return NotFound(categoryFromDb);
             }
 
-            return View();
+            return View(categoryFromDb);
         }
 
         [HttpPost]
@@ -68,7 +68,7 @@ namespace BulkyWeb.Controllers
 
             if (ModelState.IsValid)
             {
-                _db.Categories.Add(category);
+                _db.Categories.Update(category);
                 _db.SaveChanges();
                 return RedirectToAction("Index", "Category");
             }
