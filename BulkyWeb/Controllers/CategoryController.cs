@@ -38,5 +38,42 @@ namespace BulkyWeb.Controllers
             return View();
 
         }
+
+        public IActionResult Edit(int?Id)
+        {
+            if(Id==null|| Id==0)
+            {
+                return NotFound();
+            }
+
+            Category categoryFromDb = _db.Categories.Find(Id);
+            Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == Id);
+            Category? categoryFromDb2 = _db.Categories.Where(u=>u.Id==Id).FirstOrDefault();
+
+            if (categoryFromDb==null)
+            {
+                return NotFound(categoryFromDb);
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Category category)
+        {
+            if (category.Name.ToString() == category.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("name", "Here two field has same value");
+            }
+
+            if (ModelState.IsValid)
+            {
+                _db.Categories.Add(category);
+                _db.SaveChanges();
+                return RedirectToAction("Index", "Category");
+            }
+            return View();
+
+        }
     }
 }
