@@ -1,8 +1,41 @@
-﻿<div>
+﻿@model List<Category>
+
+<div>
     <h1>
-        Hey Man this is the Category section
+        Category List
     </h1>
-    <p>
-        Here we will show the Category items
-    </p>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Category ID
+                </th>
+                <th>
+                    Category Name
+                </th>
+                <th>
+                    Category Display Order
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var obj in Model)
+            {
+                <tr>
+                    <td>
+                        @obj.Id
+                    </td>
+                    <td>
+                      
+                        @obj.Name
+
+                    </td>
+                    <td>
+                        @obj.DisplayOrder
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
 </div>
