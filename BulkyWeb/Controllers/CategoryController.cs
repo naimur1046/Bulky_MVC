@@ -25,6 +25,10 @@ namespace BulkyWeb.Controllers
         [HttpPost]
         public IActionResult Create(Category category)
         {
+            if (category.Name.ToString() == category.DisplayOrder.ToString()) {
+                ModelState.AddModelError("name","Here two field has same value");
+            }
+
             if (ModelState.IsValid)
             {
                 _db.Categories.Add(category);
