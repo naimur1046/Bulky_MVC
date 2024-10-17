@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BulkyWebRazor_Temp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241017083714_AddDatabaseContext")]
-    partial class AddDatabaseContext
+    [Migration("20241017102137_CreatedDatabaseDbContext")]
+    partial class CreatedDatabaseDbContext
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,7 +43,7 @@ namespace BulkyWebRazor_Temp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Categories", (string)null);
                 });
 #pragma warning restore 612, 618
         }

@@ -5,13 +5,13 @@
 namespace BulkyWebRazor_Temp.Migrations
 {
     /// <inheritdoc />
-    public partial class AddDatabaseContext : Migration
+    public partial class CreatedDatabaseDbContext : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Products",
+                name: "Categories",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -21,7 +21,7 @@ namespace BulkyWebRazor_Temp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.PrimaryKey("PK_Categories", x => x.Id);
                 });
         }
 
@@ -29,7 +29,7 @@ namespace BulkyWebRazor_Temp.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Categories");
         }
     }
 }

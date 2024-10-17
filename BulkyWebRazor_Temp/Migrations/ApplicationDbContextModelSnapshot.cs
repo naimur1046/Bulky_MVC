@@ -40,7 +40,7 @@ namespace BulkyWebRazor_Temp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Categories", (string)null);
                 });
 #pragma warning restore 612, 618
         }
