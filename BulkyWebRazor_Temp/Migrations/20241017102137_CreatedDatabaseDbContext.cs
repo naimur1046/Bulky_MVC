@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace BulkyWebRazor_Temp.Migrations
+namespace BulkyBookWebRazor_Temp.Migrations
 {
     /// <inheritdoc />
     public partial class CreatedDatabaseDbContext : Migration
