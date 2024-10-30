@@ -14,6 +14,7 @@ namespace BulkyBook.DataAccess.Repository
 
         ApplicationDbContext _db;
         public ICategoryRepository Category { get; private set; }
+        public IProductReopsitory Product {  get; private set; }
 
       
 
@@ -21,6 +22,7 @@ namespace BulkyBook.DataAccess.Repository
         {
             this._db = db;
             Category= new CategoryRepository(db);
+            Product= new ProductRepository(db);
         }
 
         public void Save()

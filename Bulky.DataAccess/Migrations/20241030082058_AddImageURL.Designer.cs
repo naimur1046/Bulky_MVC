@@ -3,6 +3,7 @@ using BulkyBook.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BulkyBook.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241030082058_AddImageURL")]
+    partial class AddImageURL
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -88,10 +91,6 @@ namespace BulkyBook.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageURL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<double>("ListPrice")
                         .HasColumnType("float");
 
@@ -121,7 +120,6 @@ namespace BulkyBook.DataAccess.Migrations
                             Author = "Author 1",
                             CategoryId = 3,
                             ISBN = "123-4567890123",
-                            ImageURL = "k",
                             ListPrice = 100.0,
                             Price = 90.0,
                             Price100 = 80.0,
@@ -134,7 +132,6 @@ namespace BulkyBook.DataAccess.Migrations
                             Author = "Author 2",
                             CategoryId = 1,
                             ISBN = "234-5678901234",
-                            ImageURL = "d",
                             ListPrice = 120.0,
                             Price = 110.0,
                             Price100 = 100.0,
@@ -147,7 +144,6 @@ namespace BulkyBook.DataAccess.Migrations
                             Author = "Author 3",
                             CategoryId = 2,
                             ISBN = "345-6789012345",
-                            ImageURL = "g",
                             ListPrice = 150.0,
                             Price = 140.0,
                             Price100 = 125.0,
@@ -160,7 +156,6 @@ namespace BulkyBook.DataAccess.Migrations
                             Author = "Author 4",
                             CategoryId = 4,
                             ISBN = "456-7890123456",
-                            ImageURL = "g",
                             ListPrice = 180.0,
                             Price = 170.0,
                             Price100 = 150.0,
@@ -173,7 +168,6 @@ namespace BulkyBook.DataAccess.Migrations
                             Author = "Author 5",
                             CategoryId = 5,
                             ISBN = "567-8901234567",
-                            ImageURL = "d",
                             ListPrice = 200.0,
                             Price = 190.0,
                             Price100 = 175.0,
@@ -186,7 +180,6 @@ namespace BulkyBook.DataAccess.Migrations
                             Author = "Author 6",
                             CategoryId = 6,
                             ISBN = "678-9012345678",
-                            ImageURL = "r",
                             ListPrice = 250.0,
                             Price = 240.0,
                             Price100 = 225.0,

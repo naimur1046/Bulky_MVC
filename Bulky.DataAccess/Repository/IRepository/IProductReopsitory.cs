@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using BulkyBook.Models.Models;
+
 namespace BulkyBook.DataAccess.Repository.IRepository
 {
-    public interface IUnitOfWork
+    public interface IProductReopsitory : IRepository<Product>
     {
-        ICategoryRepository Category { get; }
-        IProductReopsitory Product {  get; }
-        void Save();
+        void Update(Product product);
     }
 }
